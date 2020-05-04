@@ -60,7 +60,7 @@ for parc in range(1,len(f14)+1):
 ## generate index data
 index_output = [
         {
-            "filename": "cm/csv/correlation.csv",
+            "filename": "correlation.csv",
             "unit": "r",
             "name": "connectivity matrix of %s" %config["measure"],
             "desc": "The connectivity matrix of %s" %config["measure"]
