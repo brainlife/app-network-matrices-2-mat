@@ -14,7 +14,7 @@ with open('config.json') as config_file:
     config = json.load(config_file)
 
 ## input csv file of connectivity matrix data
-input_csv = input_csv = "%s/output/%s.csv" %(config["matrices"],config["measure"])
+input_csv = "%s/output/%s.csv" %(config["matrices"],config["measure"])
 
 ## generate labels data
 labels = [ {"name": "self-loop", "desc": "index(x,x) is the diagonal"} ]
