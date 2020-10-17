@@ -77,8 +77,7 @@ The secondary output of this app is `product.json`. This file allows web interfa
 
 This App requires the following libraries when run locally. 
 
-- Python3: 
-- matplotlib: 
-- os: 
-- shutil: 
-- json: 
+- Python3: https://www.python.org/download/releases/3.0/
+- matplotlib: https://matplotlib.org/users/installing.html
+- shutil: https://pypi.org/project/pytest-shutil/
+- json: https://pypi.org/project/jsonlib-python3/
