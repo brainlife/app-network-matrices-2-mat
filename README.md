@@ -3,6 +3,34 @@
 
 # Convert network neuro matrix to conmat 
 
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+**Converts one measure's matrix from the Network Neuro raw networkmatrices output, with its parcellation key, into a conmat datatype.**
+
+Copies <measure>.csv from the networkmatrices output into cm/csv/correlation.csv and builds label.json from the parcellation key (plus 14 FreeSurfer subcortical labels) and index.json. Temporary bridge until Network Neuro outputs conmat directly; may be deprecated.
+
+Run it on brainlife.io: [https://doi.org/10.25663/brainlife.app.335](https://doi.org/10.25663/brainlife.app.335)
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `raw` | `raw` (networkmatrices) | yes | The path to the top directory of the network matrices app |
+| `parc` | `neuro/parcellation/volume` | yes | The path to the parcellation/volume datatype used to generate the network matrices |
+
+| Output | Datatype | Description |
+|---|---|---|
+| `cm` | `neuro/conmat` | The conmat data output |
+
+| Parameter | Type | Default | Description |
+|---|---|---|---|
+| `measure` | enum |  | Which network matrix to convert (the CSV <measure>.csv in the networkmatrices output), for example density or count. Options: `density`, `count`, `fa_mean`, `fa_std`, `length`, `curv`, `tors`, `fa_tp`, `denlen`, `centers`, `md_mean`, `rd_mean`, `ad_mean`, `ndi_mean`, `odi_mean`, `isovf_mean`, `ad_mean_density`, `fa_mean_density`, `md_mean_density`, `rd_mean_density`, `ndi_mean_density`, `odi_mean_density`, `isovf_mean_density`, `sphmean_mean`, `sphmean_mean_density`. |
+
+Runtime: container `faskowit/app-fmri-2-mat`; 1 CPUs; 0.5 h walltime.
+
+Please cite:
+- Avesani P, McPherson B, Hayashi S, et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. Sci Data 6, 69 (2019). [doi:10.1038/s41597-019-0073-y](https://doi.org/10.1038/s41597-019-0073-y)
+
+<!-- brainlife-app:end -->
+
 This app will converts a network matrix of a measure of interest (i.e. density, count) found in the raw:networkmatrices datatype output of Network Neuro app and a parcellation used to generate the matrix to a conmat datatype. This is a temporary app until the Network Neuro app outputs a conmat datatype. This conmat datatype is main datatype for a majority of the network processing apps currently on the website. May be deprecated in the future. 
 
 ### Authors 
